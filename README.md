@@ -72,3 +72,16 @@ If you have done everything correction you should receive a JSON response with t
 }
 ```
 Now proceed to the installation and configuration of the ThreatWare Viewer
+
+## Notes
+
+The server may be brought up and down using the systemd commands
+
+```
+systemctl start threatware-node
+systemctl stop threatware-node
+```
+The server has an active SSH port and a root account with the following password:
+```
+Threat!Ware
+````
