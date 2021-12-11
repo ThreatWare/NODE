@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-import socket, threading, sys, os, re, json
-
-f = open('config.json')
-config = json.load(f)
-f.close()
+import socket, threading, sys, os, re
+sys.path.append('../../../')
+from threatware.libs.utilities import loadConfig, writeLog
+config = loadConfig()
 
 ip = config['address'] 
 threads = []
@@ -60,12 +59,5 @@ except socket.error:
 
 html_output = "<table>%s%s</table>"%(table_header_html,table_data_html)
 
-log_count = 1
-while os.path.exists("output_%s.log"%log_count):
-    log_count += 1
-# The script when run using the API seems to fail at or during the next line
-# This doesn't appear to be an issue when run from the Node's console   
-f = open('output_%s.log'%log_count,'w')
-f.write(html_output)
-f.close()
+writeLog(html_output)
 print(html_output)
