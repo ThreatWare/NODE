@@ -75,15 +75,15 @@ Now proceed to the installation and configuration of the ThreatWare Viewer
 
 ## Notes
 
-- A fully functioning VM appliance is available in the releases section.
+- A fully functioning ready-to-use VM appliance is available in the releases section.
 
-- The server may be brought up and down using the systemd commands
+- This VM has an active SSH port and a root account with the following password:
+```
+Threat!Ware
+````
+- The ThreatWare service was developed as a systemd application and may be brought up and down using the systemd commands
 
 ```
 systemctl start threatware-node
 systemctl stop threatware-node
 ```
-- The VM server has an active SSH port and a root account with the following password:
-```
-Threat!Ware
-````
